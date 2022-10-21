@@ -71,7 +71,7 @@ namespace SportsStore.Tests {
             AdminController target = new AdminController(mock.Object);
 
             // Act
-            Product result = GetViewModel<Product>(target.Edit(4));
+            Product result = GetViewModel<Product>(target.Edit(3));
 
             // Assert
             Assert.Null(result);
