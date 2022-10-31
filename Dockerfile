@@ -21,4 +21,4 @@ ENTRYPOINT ["dotnet", "test", "--logger:trx"]
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "test"]
+ENTRYPOINT ["dotnet", "WorldOfPowerToolsTest.dll"]
