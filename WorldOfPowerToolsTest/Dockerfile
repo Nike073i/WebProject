@@ -13,7 +13,6 @@
 #COPY --from=build-env /app/out .
 #ENTRYPOINT ["dotnet", "WorldOfPowerToolsTest.dll"]
 
-
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
@@ -24,8 +23,8 @@ COPY *.csproj .
 RUN dotnet restore
 COPY . ./
 WORKDIR /src
-RUN dotnet build -c Release -o /app
-RUN dotnet test -c Release
+RUN dotnet build -c Release --no-restore -o /app
+RUN dotnet test --no-restore
 
 FROM build AS publish
 RUN dotnet publish -c Release -o /app
