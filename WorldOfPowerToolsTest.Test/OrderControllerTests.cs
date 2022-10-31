@@ -60,7 +60,7 @@ namespace SportsStore.Tests {
             Mock<IOrderRepository> mock = new Mock<IOrderRepository>();
             // Arrange - create a cart with one item
             Cart cart = new Cart();
-            cart.AddItem(new Product(), 1);
+            cart.AddItem(new Product(), 2);
             // Arrange - create an instance of the controller
             OrderController target = new OrderController(mock.Object, cart);
 
