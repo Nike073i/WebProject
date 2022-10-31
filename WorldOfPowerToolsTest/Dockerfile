@@ -20,9 +20,9 @@ EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY WebProject/WordlOfPowerToolsTest.csproj WordlOfPowerToolsTest.csproj
+COPY *.csproj .
 RUN dotnet restore
-COPY . .
+COPY . ./
 WORKDIR /src
 RUN dotnet build -c Release -o /app
 
