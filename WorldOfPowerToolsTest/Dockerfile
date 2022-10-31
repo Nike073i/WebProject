@@ -14,11 +14,11 @@
 #ENTRYPOINT ["dotnet", "WorldOfPowerToolsTest.dll"]
 
 
-FROM microsoft/aspnetcore:6.0 AS base
+FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM microsoft/aspnetcore-build:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY WebProject/WordlOfPowerToolsTest.csproj WordlOfPowerToolsTest.csproj
 RUN dotnet restore
