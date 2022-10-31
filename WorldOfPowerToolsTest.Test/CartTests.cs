@@ -26,7 +26,7 @@ namespace SportsStore.Tests
 
             // Assert
             Assert.Equal(2, results.Length);
-            Assert.Equal(p1, results[1].Product);
+            Assert.Equal(p1, results[0].Product);
             Assert.Equal(p2, results[1].Product);
         }
 
